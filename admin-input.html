@@ -22,9 +22,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" id="login" href="#"><img src="./assets/images/train.png"></a>
-
+                    <!-- Administrative Login for adding new trains -->
                     <a class="navbar-brand" href="#">Login</a>
+                    <a class="navbar-brand" id="login" href="#"><img src="./assets/images/train.png"></a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
@@ -42,13 +42,41 @@
             <div class="row content">
                 <div class="col-sm-3 sidenav hidden-xs">
                     <img src="assets/images/administrative-tools.png">
-                    <ul class="nav nav-pills nav-stacked">
+                    <!-- Administrative tools in table -->
+                    <table class="table table-dark" id = "newtrain">
+                        <th>
+                            <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">First Train Time (24-hour clock)</th>
+                                <th scope="col">Frequency (Minutes)</th>
+                                <th scope="col">Next Train</th>
+                            </tr>
+                        </th>
+                    </table>
+
+                    <!-- Form for input of train data -->
+                    <form>
+                        <div class="form-group">
+                            <label for = "name-input"> Train Name:</label>
+                            <input type="tName" class="form-control" id="tName" placeholder="name">
+                        </div>
+                        <div class="form-group">
+                            <label for = "destination-input">Destination:</label>
+                            <input type = "tDestination" class="form-control" id="tDestination" placeholder= "destination">
+                        </div>
+                        <div class = "form-group">
+                            <label for ="time-input"></label>
+                        </div>
+
+                    </form>
+                    <!-- <ul class="nav nav-pills nav-stacked">
                         <li class="active"><a href="#section1">Administrators</a></li>
                         <li><a href="#section2">Train Name</a></li>
                         <li><a href="#section3">Destination</a></li>
                         <li><a href="#section3">First Train Time</a></li>
                         <li><a href="#section3">Frequency</a></li>
-                    </ul><br>
+                    </ul><br> -->
                 </div>
                 <br>
 

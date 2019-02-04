@@ -1,38 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
     <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Page Title</title>
+        <title>Firebase Backend</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-        <script src="main.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
     <body>
-        <h1 id="train-times"></h1> 
-        
-        <script>
-        // Initialize Firebase
-        var config = {
-        apiKey: "AIzaSyC0Y-GrPY5GiAOP2IQTiFNhVldqqqrtkpc",
-        authDomain: "train-scheduler-9a3f9.firebaseapp.com",
-        databaseURL: "https://train-scheduler-9a3f9.firebaseio.com",
-        projectId: "train-scheduler-9a3f9",
-        storageBucket: "train-scheduler-9a3f9.appspot.com",
-        messagingSenderId: "431749954222"
-        };
-        firebase.initializeApp(config);
+        <h1 id="arriving"></h1>
+        <div class="panel-body">
+            <!-- Table -->
+            <table class="table table-hover table-striped" id="trainTbl">
+                <thead class="header-color">
+                    <tr>
+                        <th id="Name">Train Name</th>
+                        <th id ="Destination">Destination</th>
+                        <th id = "Frequency">Frequency (min)</th>
+                        <th id = "Next">Next Arrival</th>
+                        <th id = "Away">Minutes Away</th>
+                    </tr>
+                </thead>
 
-let trainTimes = document.getelementById('train-times');
-let dbRef = firebase.database().ref().child('text');
-dbRef.on('value', snap => trainTimes.innerText=snap.val());
+                <tbody id="trainbody">
 
 
-        </script>>
+                    <script src="./assets/javascript/app.js"></script>
+                    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+                    <script>
 
-        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+                        // Initialize Firebase
+                        var config = {
+                            apiKey: "AIzaSyC0Y-GrPY5GiAOP2IQTiFNhVldqqqrtkpc",
+                            authDomain: "train-scheduler-9a3f9.firebaseapp.com",
+                            databaseURL: "https://train-scheduler-9a3f9.firebaseio.com",
+                            projectId: "train-scheduler-9a3f9",
+                            storageBucket: "train-scheduler-9a3f9.appspot.com",
+                            messagingSenderId: "431749954222"
+                        };
+                        firebase.initializeApp(config);
+
+                        const database = firebase.database();
+
+                        let trainTimes = document.getElementById('trainbody');
+                        let dbRef = firebase.database().ref().child('Name');
+                        let dbRef = firebase.database().ref().child('Destination');
+                        let dbRef = firebase.database().ref().child('Destination');
+                        let dbRef = firebase.database().ref().child('Destination');
+                        let dbRef = firebase.database().ref().child('Destination');
+                        dbRef.on('value', snap => arriving.innerText = snap.val());
+
+                    </script>
     </body>
 
 </html>
