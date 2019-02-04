@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>1
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css" />
+    <title>Scratch Train Scheduler</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+
+        <!-- Link to Moment.js should go here -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+        <!-- Script -->
+        <script>
+            var randomDate = "02/16/1983";
+            var randomFormat = "MM/DD/YYYY";
+            var convertedDate = moment(randomDate, randomFormat);
+            // Using scripts from moment.js write code below to complete each of the following.
+            // Console.log to confirm the code changes you made worked.
+            // 1 ...to convert the randomDate into three other date formats
+            console.log(convertedDate.format("MM/DD/YY"));
+            console.log(convertedDate.format("MMM Do, YYYY hh:mm:ss"));
+            console.log(convertedDate.format("X"));
+            console.log("----------------------------------------");
+            // 2 ...to determine the time in years, months, days between today and the randomDate
+            console.log(convertedDate.toNow());
+            console.log(convertedDate.diff(moment(), "years"));
+            console.log(convertedDate.diff(moment(), "months"));
+            console.log(convertedDate.diff(moment(), "days"));
+            console.log(convertedDate.diff(moment(), "minutes"));
+            console.log(convertedDate.diff(moment(), "seconds"));
+            console.log("----------------------------------------");
+            // 3 ...to determine the number of days between the randomDate and 02/16/2019
+            var newDate = moment("02/16/2019", randomFormat);
+            console.log(convertedDate.diff(newDate, "days"));
+            // 4 ...to convert the randomDate to unix time (be sure to look up what unix time even is!!!)
+            console.log(convertedDate.format("X"));
+            console.log("----------------------------------------");
+            // 5 ...to determine what day of the week and what week of the year this randomDate falls on.
+            console.log(convertedDate.format("DDD"));
+            console.log(convertedDate.format("dddd"));
+
+            let m = moment()
+            console.log(m.toString())
+            console.log(new Date().toString())
+            console.log(m.toISOString())
+            console.log(m.utc().toString())
+            // ================
+            m = moment('2014-11-19')
+            console.log(m.toString())
+
+            m=moment(new Date ('2019,10,07'))
+            console.log(m.toString())
+
+            let ts = Date.now()
+            console.log(ts)
+
+            m = moment(ts)
+            m.toString()
+            m = moment([1956,02,07])
+            console.log(m.toString())
+
+            // ========================================
+            // Date and Time Manipulation from an array
+            // ========================================
+
+            m = moment([1956,02,07, 22,13]) //Date and time
+
+            // ========================================
+            // Date and Time Arithmetic Manipulation 
+            // ========================================
+            console.log(moment().toString())
+            console.log(moment().add('day', 12))
+            console.log(moment().add('day',12).toString())
+            console.log(moment().subtract('day',12).toString())
+            console.log(moment().subtract('day',12).subtract('hour', 8).toString())
+
+            console.log(moment().fromNow())
+            console.log(moment('2019=02-013').fromNow())
+            console.log(Date.now() - (1000 * 60 * 60 * 24 * 5)).fromNow()
+            console.log(moment(moment([2019,01,03])).fromNow())
+            
+            
+            console.log(moment().diff('2014-10-10'))
+            console.log('2019-05').daysInMonth()
+            [1,2,3,4,5,6,7,8,9,10,11,12].forEach(function(num) {
+                var date = '2014-'+(num <10? '0'+num: num.toString());
+                console.log(date, 'has', moment(date).daysInMonth(), 'days');
+            });
+            
+
+
+
+
+
+
+
+        </script>
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="./assets/javascript/train-schedule.js"></script>
+</body>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+    crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+</html>

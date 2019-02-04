@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>SBTA Subway Scheduler</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <nav class="w3-navbar navbar-inverse visible">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" id="login" href="#"><img src="assets/images/administrative-tools.png"></a>
+
+                    <a class="navbar-brand" href="#">Login</a>
+                </div>
+                <div class="w3-collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Admin Tools</a></li>
+                        <li><a href="#">Username or email:</a></li>
+                        <li><a href="#">Password:</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-3 sidenav hidden-xs">
+                    <img src="./assets/images/train.png">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#section1">Trip Information</a></li>
+                        <li><a href="#section2">From Station:</a></li>
+                        <li><a href="#section3">To Station:</a></li>
+                        <li><a href="#section3">Date:</a></li>
+                        <li><a href="#section3">Time:</a></li>
+                    </ul><br>
+                </div>
+                <br>
+
+                <div class="col-sm-9">
+                    <div class="well">
+                        <h1>Super Basic Transit Authority</h1>
+                        <h4>The SBTA subway system is the fastest and most efficient way for tourists to explore
+                            our town.</h4>
+                    </div>
+                    <div class="row" id="train-line">
+                        <div class="col-sm-4" id="red-line">
+                            <div class="well">
+                                <h4>Red Line</h4>
+                                <p>Destination</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" id="green-line">
+                            <div class="well">
+                                <h4>Green Line</h4>
+                                <p>Destination</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="well" id="gold-line">
+                                <h4>Gold Line</h4>
+                                <p>Destination</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4" id="sub-index">
+                            <div class="well">
+                                <p>Departure Time:</p>
+                                <p>Arival Time:</p>
+                                <p>Trip Duration:</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <p>Departure Time:</p>
+                                <p>Arival Time:</p>
+                                <p>Trip Duration:</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="well">
+                                <p>Departure Time:</p>
+                                <p>Arival Time:</p>
+                                <p>Trip Duration:</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer row-12 fixed-bottom text-center">
+                <div class="container">
+                    <h6>Copyright © 2018 UCF Coding Bootcamp--Ronald K. Antonio</h6>
+                </div>
+                </footer>
+            </div>
+
+    </body>
+
+</html>
+
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<!-- Link to Moment.js should go here -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<script src="./assets/javascript/app.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
