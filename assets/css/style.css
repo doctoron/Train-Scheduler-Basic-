@@ -29,9 +29,17 @@ body {
     color: #ffffffff;
     /* background-color: darkgreen; */
 }
+
 .footer {
-    background-color: black;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
 }
+
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
     height: 550px
