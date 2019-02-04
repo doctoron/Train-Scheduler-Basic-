@@ -19,6 +19,10 @@ img {
     vertical-align: middle;
     height: 25px;
 }
+.sidenav {
+    background-color: darkslategray;
+    height: 100%;
+}
 h4 {
     color: #ffffff;
     text-shadow: .1px .1px #270202;
@@ -51,7 +55,14 @@ a {
     text-shadow: .5px .5px #000000;
 
 }
-
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    background-color: transparent;
+    color: #b8860b;
+    text-shadow: .1px .1px #270202;
+}
 .footer {
   position: fixed;
   left: 0;
@@ -84,8 +95,8 @@ a {
 }
 /* Set gray background color and 100% height */
 .sidenav {
-  background-color: #f1f1f1;
-  height: 100%;
+    background-color: darkslategray;
+    height: 100%;
 }
     
 /* On small screens, set height to 'auto' for the grid */

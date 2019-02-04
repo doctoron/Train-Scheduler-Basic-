@@ -45,19 +45,6 @@
                 <div class="col-sm-3 sidenav hidden-xs">
                     <img src="assets/images/administrative-tools.png">
 
-                    <!-- Administrative tools in table -->
-                    <table class="table table-dark" id="newtrain">
-                        <th>
-                            <tr>
-                                <th scope="col">Train Name</th>
-                                <th scope="col">Destination</th>
-                                <th scope="col">First Train Time (24-hour clock)</th>
-                                <th scope="col">Frequency (Minutes)</th>
-                                <th scope="col">Next Train</th>
-                            </tr>
-                        </th>
-                    </table>
-
                     <!-- Form for input of train data -->
                     <form>
                         <div class="form-group">
@@ -76,6 +63,8 @@
                             <label for="frequency-input">First Train Time (Minutes)</label>
                             <input type="tFrequency" class="form-control" id="tFrequency" placeholder="Frequency">
                         </div>
+                        <!-- Submit button for new train form data -->
+                        <button type="submt" id="submit" class="w3-btn btn-primary">Add Train</button>
 
                     </form>
                     <!-- <ul class="nav nav-pills nav-stacked">
@@ -91,28 +80,26 @@
                 <div class="col-sm-9">
                     <div class="well">
                         <h1>Super Basic Transit Authority</h1>
-                        <h4>The SBTA subway system is the fastest and most efficient way for tourists to explore
+                        <h4>The SBTA rail system is the fastest and most efficient way for tourists to explore
                             our town.</h4>
                     </div>
                     <div class="row">
                         <div class="card"></div>
+
                         <form>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                    placeholder="Enter email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                                <!-- Administrative tools in table -->
+                                <table class="table table-dark" id="newtrain">
+                                    <th>
+                                        <tr>
+                                            <th scope="col">Train Name</th>
+                                            <th scope="col">Destination</th>
+                                            <th scope="col">First Train Time (24-hour clock)</th>
+                                            <th scope="col">Frequency (Minutes)</th>
+                                            <th scope="col">Next Train</th>
+                                        </tr>
+                                    </th>
+                                </table>
                         </form>
                     </div>
                 </div>

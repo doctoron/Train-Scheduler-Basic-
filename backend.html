@@ -48,8 +48,16 @@
                         };
                         firebase.initializeApp(config);
 
-                        const database = firebase.database();
+                        const database = firebase.database
+                        $("#submit").on("click", function(event) {
+                            event.preventDefault();
 
+                            let Name = $("#tName").val().trim();
+                            let Destination = $("#tDestination").val().trim();
+                            let FirstTrain = $("#tTime").val().trim();
+                            let Frequency = $()
+
+                        })
                         let trainTimes = document.getElementById('trainbody');
                         let dbRef = firebase.database().ref().child('Name');
                         let dbRef = firebase.database().ref().child('Destination');
