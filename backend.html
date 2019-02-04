@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Page Title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+        <h1 id="train-times"></h1> 
+        
+        <script>
+        // Initialize Firebase
+        var config = {
+        apiKey: "AIzaSyC0Y-GrPY5GiAOP2IQTiFNhVldqqqrtkpc",
+        authDomain: "train-scheduler-9a3f9.firebaseapp.com",
+        databaseURL: "https://train-scheduler-9a3f9.firebaseio.com",
+        projectId: "train-scheduler-9a3f9",
+        storageBucket: "train-scheduler-9a3f9.appspot.com",
+        messagingSenderId: "431749954222"
+        };
+        firebase.initializeApp(config);
+
+let trainTimes = document.getelementById('train-times');
+let dbRef = firebase.database().ref().child('text');
+dbRef.on('value', snap => trainTimes.innerText=snap.val());
+
+
+        </script>>
+
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+    </body>
+
+</html>
