@@ -9,6 +9,12 @@
         <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
 
     </head>
 
@@ -68,12 +74,12 @@
 
                     </form>
                     <!-- <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#section1">Administrators</a></li>
-                        <li><a href="#section2">Train Name</a></li>
-                        <li><a href="#section3">Destination</a></li>
-                        <li><a href="#section3">First Train Time</a></li>
-                        <li><a href="#section3">Frequency</a></li>
-                    </ul><br> -->
+                                                            <li class="active"><a href="#section1">Administrators</a></li>
+                                                            <li><a href="#section2">Train Name</a></li>
+                                                            <li><a href="#section3">Destination</a></li>
+                                                            <li><a href="#section3">First Train Time</a></li>
+                                                            <li><a href="#section3">Frequency</a></li>
+                                                        </ul><br> -->
                 </div>
                 <br>
 
@@ -111,6 +117,53 @@
                 </div>
             </div>
         </div>
+
+        <script>
+
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyC0Y-GrPY5GiAOP2IQTiFNhVldqqqrtkpc",
+                authDomain: "train-scheduler-9a3f9.firebaseapp.com",
+                databaseURL: "https://train-scheduler-9a3f9.firebaseio.com",
+                projectId: "train-scheduler-9a3f9",
+                storageBucket: "train-scheduler-9a3f9.appspot.com",
+                messagingSenderId: "431749954222"
+            };
+            firebase.initializeApp(config);
+
+            var database = firebase.database();
+            // jQuery on click will grab ID and execute
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
+
+                // Grab variable from the form
+                let Name = $("#tName").val().trim();
+                let Destination = $("#tDestination").val().trim();
+                let FirstTrain = $("#tTime").val().trim();
+                let Frequency = $("#tFrequency").val().trim();
+
+                // Package entire form as an object to send to Firebase
+                let newTrain = {
+                    name: Name,
+                    destination: Destination,
+                    firsttrain: FirstTrain,
+                    frequency: Frequency
+                };
+                // Push object to Firebase (which will convert data into an array of objects in table)
+                database.ref().push(newTrain);
+            });
+
+
+                                        // let trainTimes = document.getElementById('trainbody');
+                                        // let dbRef = firebase.database().ref().child('Name');
+                                        // let dbRef = firebase.database().ref().child('Destination');
+                                        // let dbRef = firebase.database().ref().child('Destination');
+                                        // let dbRef = firebase.database().ref().child('Destination');
+                                        // let dbRef = firebase.database().ref().child('Destination');
+                                        // dbRef.on('value', snap => arriving.innerText = snap.val());
+
+        </script>
+        <script src="./assets/javascript/app.js"></script>
     </body>
 
 </html>

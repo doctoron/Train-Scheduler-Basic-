@@ -23,10 +23,10 @@
                 <thead class="header-color">
                     <tr>
                         <th id="Name">Train Name</th>
-                        <th id ="Destination">Destination</th>
-                        <th id = "Frequency">Frequency (min)</th>
-                        <th id = "Next">Next Arrival</th>
-                        <th id = "Away">Minutes Away</th>
+                        <th id="Destination">Destination</th>
+                        <th id="Frequency">Frequency (min)</th>
+                        <th id="Next">Next Arrival</th>
+                        <th id="Away">Minutes Away</th>
                     </tr>
                 </thead>
 
@@ -49,22 +49,35 @@
                         firebase.initializeApp(config);
 
                         const database = firebase.database
-                        $("#submit").on("click", function(event) {
+                        // jQuery on click will grab ID and execute 
+                        $("#submit").on("click", function (event) {
                             event.preventDefault();
 
+                            // Grab variable from the form
                             let Name = $("#tName").val().trim();
                             let Destination = $("#tDestination").val().trim();
                             let FirstTrain = $("#tTime").val().trim();
-                            let Frequency = $()
+                            let Frequency = $("#tFrequency").val().trim();
 
+                            // Package entire form as an object to send to Firebase
+                            let newTrain = {
+                                name: Name,
+                                destination: Destination,
+                                firsttrain: FirstTrain,
+                                frequency: Frequency
+                            };
+                            // Push object to Firebase (which will convert data into an array of objects in table)
+                            database.ref().push(newTrain)
                         })
-                        let trainTimes = document.getElementById('trainbody');
-                        let dbRef = firebase.database().ref().child('Name');
-                        let dbRef = firebase.database().ref().child('Destination');
-                        let dbRef = firebase.database().ref().child('Destination');
-                        let dbRef = firebase.database().ref().child('Destination');
-                        let dbRef = firebase.database().ref().child('Destination');
-                        dbRef.on('value', snap => arriving.innerText = snap.val());
+
+
+                        // let trainTimes = document.getElementById('trainbody');
+                        // let dbRef = firebase.database().ref().child('Name');
+                        // let dbRef = firebase.database().ref().child('Destination');
+                        // let dbRef = firebase.database().ref().child('Destination');
+                        // let dbRef = firebase.database().ref().child('Destination');
+                        // let dbRef = firebase.database().ref().child('Destination');
+                        // dbRef.on('value', snap => arriving.innerText = snap.val());
 
                     </script>
     </body>
