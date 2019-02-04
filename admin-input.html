@@ -2,10 +2,10 @@
 <html lang="en">
 
     <head>
-        <title>SBTA Subway Scheduler</title>
+        <title>Admin Input</title>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -22,10 +22,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
                     <!-- Administrative Login for adding new trains -->
                     <a class="navbar-brand" href="#">Login</a>
                     <a class="navbar-brand" id="login" href="#"><img src="./assets/images/train.png"></a>
                 </div>
+
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
@@ -42,8 +44,9 @@
             <div class="row content">
                 <div class="col-sm-3 sidenav hidden-xs">
                     <img src="assets/images/administrative-tools.png">
+
                     <!-- Administrative tools in table -->
-                    <table class="table table-dark" id = "newtrain">
+                    <table class="table table-dark" id="newtrain">
                         <th>
                             <tr>
                                 <th scope="col">Train Name</th>
@@ -58,15 +61,20 @@
                     <!-- Form for input of train data -->
                     <form>
                         <div class="form-group">
-                            <label for = "name-input"> Train Name:</label>
-                            <input type="tName" class="form-control" id="tName" placeholder="name">
+                            <label for="name-input"> Train Name:</label>
+                            <input type="tName" class="form-control" id="tName" placeholder="Name">
                         </div>
                         <div class="form-group">
-                            <label for = "destination-input">Destination:</label>
-                            <input type = "tDestination" class="form-control" id="tDestination" placeholder= "destination">
+                            <label for="destination-input">Destination:</label>
+                            <input type="tDestination" class="form-control" id="tDestination" placeholder="Destination">
                         </div>
-                        <div class = "form-group">
-                            <label for ="time-input"></label>
+                        <div class="form-group">
+                            <label for="time-input">First Train Time (24-hour clock)</label>
+                            <input type="tTime" class="form-control" id="tTime" placeholder="Time">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency-input">First Train Time (Minutes)</label>
+                            <input type="tFrequency" class="form-control" id="tFrequency" placeholder="Frequency">
                         </div>
 
                     </form>
@@ -108,3 +116,14 @@
                         </form>
                     </div>
                 </div>
+                <div class="container">
+                    <div class="footer">
+                        <h6>Copyright © 2019 Ronald K. Antonio--UCF Coding Bootcamp</h6>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
