@@ -36,6 +36,11 @@ body {
 
     /* background-color: darkgreen; */
 }
+tbody>#train-data {
+    color: #000000
+}
+
+
 #section1 {
     color: #ffffff;
     background-color: #270202;
