@@ -108,16 +108,16 @@ $('#submit').on('click', function (event) {
         console.log(allAboard);
 
         // Update train departure data
-        // let upDateAllAboard = () => {
-        //     $('train-data').html(template);
-        // }
+        let upDateAllAboard = () => {
+            $('train-data').html(template);
+        }
 
-        // let whistle = () => {
-        //     setInterval(upDateAllAboard, 60 * 1000);
-        // };
+        let whistle = () => {
+            setInterval(upDateAllAboard, 60 * 1000);
+        };
 
         // All Aboard!!
-        // whistle();
+        whistle();
 
    
         // ES6 Template String to display updated train data in DOM table id #train-data
