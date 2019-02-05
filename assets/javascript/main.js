@@ -9,22 +9,7 @@ let apiKey = '&api_key=dc6zaTOxFJmzC&limit=10';
 `
 $(img src=${trainLogo}).appendTo('#train-logo');
 `
-function change_favicon(img) {
-    var favicon = document.querySelector('link[../images/train.png]');
-    
-    if (!favicon) {
-        favicon = document.createElement('link');
-        favicon.setAttribute('rel', 'shortcut icon');
-        var head = document.querySelector('head');
-        head.appendChild(favicon);
-    }
-    
-    
-    favicon.setAttribute('type', 'image/png');
-    favicon.setAttribute('href', img);
-}
 
-change_favicon('https://codepad.co/img/icn_logo.png');
 // Get the Sidebar
 let mySidebar = document.getElementById('mySidebar');
 
