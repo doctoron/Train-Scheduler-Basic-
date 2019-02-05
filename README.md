@@ -1,26 +1,26 @@
 # Train-Scheduler-Basic-
-This assignment involved the use of Firebase database to host arrival and departure data using Moment.js to provide updated train data. It proved to be challenging and rewarding.
-# Firebase Assignment - Train Scheduler (Basic - Recommended)
+This assignment involved the use of Firebase database to host arrival and departure data using Moment.js to provide updated train data. 
 
 ### Overview
 
-In this assignment, you'll create a train schedule application that incorporates Firebase to host arrival and departure data. Your app will retrieve and manipulate this information with Moment.js. This website will provide up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
+In the creation of a train schedule application that incorporates Firebase to host arrival and departure data, retrieval and manipulation of information was accomplished with Moment.js. This website provides up-to-date information about various trains, namely their arrival times and how many minutes remain until they arrive at their station.
+Calculations are made from the current time and zone coordinates.
 
 - - -
 
 ### Setup
 
-* We'll leave that up to you -- however you like. Just make sure you're using Firebase to store data, GitHub to backup your project, and GitHub Pages to host your finished site.
+* Confirmed Firebase storage of data, GitHub for backup, and Github Pages hosting of the site.
 
 ### Submission on BCS
 
-* Please submit both the deployed Github.io link to your homework AND the link to the Github Repository!
+* The Github appication was deployed on the via the  https://Github.io link AND the link to the Github Repository was provided
 
-### Instructions
+### Specifications met
 
-* Make sure that your app suits this basic spec:
+* This app suits the following basic spec:
   
-  * When adding trains, administrators should be able to submit the following:
+  * When adding trains, currently anyone will be able to submit the following using a desktop browser:
     
     * Train Name
     
@@ -30,24 +30,25 @@ In this assignment, you'll create a train schedule application that incorporates
     
     * Frequency -- in minutes
   
-  * Code this app to calculate when the next train will arrive; this should be relative to the current time.
+  * It was also coded to calculate when the next train will arrive relative to the current time zone.
   
-  * Users from many different machines must be able to view same train times.
+  * Users from many different machines are able to view same train times.
   
-  * Styling and theme are completely up to you. Get Creative!
+  * Styling and theme were chosen to bring consistency and show postential, future functionality.   
+  
+  * Media queries were not a part of the basic spec, however future versions will be q/a'd for varios devices.
 
-### Example Site
+  * Functionality to allow only administrators to manipulate data exceeded the time allowed for development at this stage.
 
-![train homework](Train_Time_Image.png)
 
 ### Bonus (Extra Challenges)
 
-* Consider updating your "minutes to arrival" and "next train time" text once every minute. This is significantly more challenging; only attempt this if you've completed the actual activity and committed it somewhere on GitHub for safekeeping (and maybe create a second GitHub repo).
-   // Import Admin SDK
+* Coding to update "minutes to arrival" and "next train time" text once every minute, is still under construction. This is significantly more challenging; only attempt this if you've completed the actual activity and committed it somewhere on GitHub for safekeeping (and maybe create a second GitHub repo).
+   
 
-* Try adding `update` and `remove` buttons for each train. Let the user edit the row's elements-- allow them to change a train's Name, Destination and Arrival Time (and then, by relation, minutes to arrival).
+* The `update` and `remove` buttons for each train were added, but without functionality at this juncture. Manipulation of the snapshot element, which stores references to indexed data, was located, but beyond time alotted. These highly desired features would give the user the ability to edit the row's elements-- allow them to change a train's Name, Destination and Arrival Time (and then, by relation, minutes to arrival).
 
-* As a final challenge, make it so that only users who log into the site with their Google or GitHub accounts can use your site. You'll need to read up on Firebase authentication for this bonus exercise.
+* Clicking on the train icon (favicon added) in the upper right hand corner, will take users to the Firebase login, which will require that they login with their Google account.  More features will be added as I digest more on Firebase authentication.
 
 ### Reminder: Submission on BCS
 
@@ -55,30 +56,14 @@ In this assignment, you'll create a train schedule application that incorporates
 
 - - -
 
-### Minimum Requirements
-
-Attempt to complete homework assignment as described in instructions. If unable to complete certain portions, please pseudocode these portions to describe what remains to be completed. Adding a README.md as well as adding this homework to your portfolio are required as well and more information can be found below.
-
-- - -
-
 ### Create a README.md
 
-Add a `README.md` to your repository describing the project. Here are some resources for creating your `README.md`. Here are some resources to help you along the way:
-
-* [About READMEs](https://help.github.com/articles/about-readmes/)
-
-* [Mastering Markdown](https://guides.github.com/features/mastering-markdown/)
-
-- - -
+This `README.md` was created in compliance with the project spec and deployed to my repository as described. 
 
 ### Add To Your Portfolio
-
-After completing the homework please add the piece to your portfolio. Make sure to add a link to your updated portfolio in the comments section of your homework so the TAs can easily ensure you completed this step when they are grading the assignment. To receive an 'A' on any assignment, you must link to it from your portfolio.
+This project piece was added to my portfolio.
 
 - - -
 
 ### One More Thing
-
-If you have any questions about this project or the material we have covered, please post them in the community channels in slack so that your fellow developers can help you! If you're still having trouble, you can come to office hours for assistance from your instructor and TAs.
-
-**Good Luck!**
+Fantastic support was given from Michael Pazcuzi, Karina Mills and Derek Lofton.  Special thanks to Leah Daniels.
