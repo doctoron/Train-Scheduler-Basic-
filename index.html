@@ -1,19 +1,22 @@
-<!-- Ronald Antonio -->
-<!-- January 2019 -->
-<!-- UCF Full Stack Coding Bootcamp (Part Time) -->
-<!-- Firebase hosting of arrival and departure data using Moment.js to provide updated train data -->
-
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
-        <title>SBTA Subway Scheduler</title>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+        <title>Admin Input</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+        <!-- Link to Moment.js should go here -->
+        <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 
     </head>
 
@@ -50,14 +53,28 @@
                 <div class="col-sm-3 sidenav hidden-xs">
                     <img src="assets/images/administrative-tools.png">
 
-    
-                    <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#section1">Administrators</a></li>
-                        <li><a href="#section2">Train Name</a></li>
-                        <li><a href="#section3">Destination</a></li>
-                        <li><a href="#section3">First Train Time</a></li>
-                        <li><a href="#section3">Frequency</a></li>
-                    </ul><br>
+                    <!-- Form for input of train data -->
+                    <form>
+                        <div class="form-group">
+                            <label for="name-input"> Train Name:</label>
+                            <input type="tName" class="form-control" id="tName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination-input">Destination:</label>
+                            <input type="tDestination" class="form-control" id="tDestination" placeholder="Destination">
+                        </div>
+                        <div class="form-group">
+                            <label for="time-input">First Train Time (24-hour clock)</label>
+                            <input type="tTime" class="form-control" id="tTime" placeholder="Time">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency-input">Frequency (Minutes)</label>
+                            <input type="tFrequency" class="form-control" id="tFrequency" placeholder="Frequency">
+                        </div>
+                        <!-- Submit button for new train form data -->
+                        <button type="submt" id="submit" class="w3-btn btn-primary">Add Train</button>
+
+                    </form>
                 </div>
                 <br>
 
@@ -65,92 +82,39 @@
                     <div class="well">
                         <h1>Super Basic Transit Authority</h1>
                         <h4>The SBTA rail system is the fastest and most efficient way for tourists to explore
-                            this land.</h4>
-                    </div>
-                    <div class="row" id="train-line">
-                        <div class="col-sm-4" id="red-line">
-                            <div class="well">
-                                <h4>Red Line</h4>
-                                <p>Destination</p>
-                                <p>Frequency</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" id="green-line">
-                            <div class="well">
-                                <h4>Green Line</h4>
-                                <p>Destination</p>
-                                <p>Frequency</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well" id="gold-line">
-                                <h4>Gold Line</h4>
-                                <p>Destination</p>
-                                <p>Frequency</p>
-                            </div>
-                        </div>
+                            our town.</h4>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4" id="red-sub-index">
-                            <div class="well">
-                                <p>Departing In:</p>
-                                <p>Arriving In:</p>
-                                <p>Next Train In:</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="well" id="green-sub-index">
-                                <p>Departing In:</p>
-                                <p>Arriving In:</p>
-                                <p>Next Train In:</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4" id="gold-sub-index">
-                            <div class="well">
-                                <p>Departing In:</p>
-                                <p>Arriving In:</p>
-                                <p>Next Train In:</p>
+                        <div class="card"></div>
 
-                            </div>
-                        </div>
+                        <form>
+                            <div class="form-group">
+                                <!-- Administrative tools in table -->
+                                <table class="table table-dark" id="add-train">
+                                    <th>
+                                        <tr>
+                                            <th scope="col">Train Name</th>
+                                            <th scope="col">Destination</th>
+                                            <th scope="col">First Train Time (24-hour clock)</th>
+                                            <th scope="col">Frequency (Minutes)</th>
+                                            <th scope="col">Next Train</th>
+                                        </tr>
+                                    </th>
+                                    <tbody id="train-data"></tbody>
+                                </table>
+                        </form>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div>
-                            <p></p>
-                        </div>
+                <div class="container">
+                    <div class="footer">
+                        <h6>Copyright © 2019 Ronald K. Antonio--UCF Coding Bootcamp</h6>
+                        </footer>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="footer">
-                    <h6>Copyright © 2019 Ronald K. Antonio--UCF Coding Bootcamp</h6>
-                    </footer>
-                </div>
-            </div>
+        </div>
 
+        <script src="./assets/javascript/app.js"></script>
     </body>
-
-</html>
-
-
-
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery.js"></script>
-
-<!-- Link to Moment.js should go here -->
-<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-
-<script src="./assets/javascript/app.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
-<!-- Googlemaps API -->
-<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> -->
-
-</body>
 
 </html>

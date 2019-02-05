@@ -1,0 +1,156 @@
+<!-- Ronald Antonio -->
+<!-- January 2019 -->
+<!-- UCF Full Stack Coding Bootcamp (Part Time) -->
+<!-- Firebase hosting of arrival and departure data using Moment.js to provide updated train data -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>SBTA Subway Scheduler</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <nav class="w3-navbar navbar-inverse visible">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- Administrative Login for adding new trains -->
+                    <a class="navbar-brand" href="#">Login</a>
+                    <a class="navbar-brand" id="login" href="#"><img src="./assets/images/train.png"></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Schedules</a></li>
+                        <li><a href="#">Fares & Tolls</a></li>
+                        <li><a href="#">Weather</a></li>
+                        <li><a href="#">Maps</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-3 sidenav hidden-xs">
+                    <img src="assets/images/administrative-tools.png">
+
+    
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active"><a href="#section1">Administrators</a></li>
+                        <li><a href="#section2">Train Name</a></li>
+                        <li><a href="#section3">Destination</a></li>
+                        <li><a href="#section3">First Train Time</a></li>
+                        <li><a href="#section3">Frequency</a></li>
+                    </ul><br>
+                </div>
+                <br>
+
+                <div class="col-sm-9">
+                    <div class="well">
+                        <h1>Super Basic Transit Authority</h1>
+                        <h4>The SBTA rail system is the fastest and most efficient way for tourists to explore
+                            this land.</h4>
+                    </div>
+                    <div class="row" id="train-line">
+                        <div class="col-sm-4" id="red-line">
+                            <div class="well">
+                                <h4>Red Line</h4>
+                                <p>Destination</p>
+                                <p>Frequency</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" id="green-line">
+                            <div class="well">
+                                <h4>Green Line</h4>
+                                <p>Destination</p>
+                                <p>Frequency</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="well" id="gold-line">
+                                <h4>Gold Line</h4>
+                                <p>Destination</p>
+                                <p>Frequency</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4" id="red-sub-index">
+                            <div class="well">
+                                <p>Departing In:</p>
+                                <p>Arriving In:</p>
+                                <p>Next Train In:</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="well" id="green-sub-index">
+                                <p>Departing In:</p>
+                                <p>Arriving In:</p>
+                                <p>Next Train In:</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" id="gold-sub-index">
+                            <div class="well">
+                                <p>Departing In:</p>
+                                <p>Arriving In:</p>
+                                <p>Next Train In:</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="footer">
+                    <h6>Copyright © 2019 Ronald K. Antonio--UCF Coding Bootcamp</h6>
+                    </footer>
+                </div>
+            </div>
+
+    </body>
+
+</html>
+
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+
+<!-- Link to Moment.js should go here -->
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<script src="./assets/javascript/app.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+<!-- Googlemaps API -->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> -->
+
+</body>
+
+</html>
