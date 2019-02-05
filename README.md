@@ -1,8 +1,6 @@
 # Train-Scheduler-Basic-
-Firebase hosting of arrival and departure data using Moment.js to provide updated train data
+This assignment involved the use of Firebase database to host arrival and departure data using Moment.js to provide updated train data. It proved to be challenging and rewarding.
 # Firebase Assignment - Train Scheduler (Basic - Recommended)
-
-##### _Because that Rock Paper Scissors Game is Too Damn Hard_
 
 ### Overview
 
@@ -45,6 +43,7 @@ In this assignment, you'll create a train schedule application that incorporates
 ### Bonus (Extra Challenges)
 
 * Consider updating your "minutes to arrival" and "next train time" text once every minute. This is significantly more challenging; only attempt this if you've completed the actual activity and committed it somewhere on GitHub for safekeeping (and maybe create a second GitHub repo).
+   // Import Admin SDK
 
 * Try adding `update` and `remove` buttons for each train. Let the user edit the row's elements-- allow them to change a train's Name, Destination and Arrival Time (and then, by relation, minutes to arrival).
 

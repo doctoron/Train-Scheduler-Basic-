@@ -104,17 +104,24 @@ $('#submit').on('click', function (event) {
         console.log(allAboard);
 
         // Update train departure data
-        let upDateAllAboard = () => {
-            $('train-data').html(template);
-        }
+        // let upDateAllAboard = () => {
+        //     $('train-data').html(template);
+        // }
 
-        let whistle = () => {
-            setInterval(upDateAllAboard, 60 * 1000);
-        };
+        // let whistle = () => {
+        //     setInterval(upDateAllAboard, 60 * 1000);
+        // };
 
         // All Aboard!!
-        whistle();
+        // whistle();
 
+        // Retrieve new posts as they are added to our database
+        ref.on("child_added", function (snapshot, prevChildKey) {
+            var newPost = snapshot.val();
+            console.log("Author: " + newPost.author);
+            console.log("Title: " + newPost.title);
+            console.log("Previous Post ID: " + prevChildKey);
+        });
         // ES6 Template String to display updated train data in DOM table id #train-data
         let template = `
         <tr>
