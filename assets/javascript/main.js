@@ -77,72 +77,75 @@ $('#submit').on('click', function (event) {
     $('#tFrequency').val('');
 
     // Update HTML with new added record 
-    database.ref().on('child_added', function (childSnapshot) {
-        console.log(childSnapshot.val());
 
-        let newTrain = childSnapshot.val().name;
-        let newLocation = childSnapshot.val().destination;
-        let newFirstTrain = childSnapshot.val().firsttrain;
-        let newFrequency = childSnapshot.val().frequency;
-
-        // Use moment.js to calculate conversions, time differences and train schedules
-        let currentTime = moment();
-        console.log(currentTime);
-
-        let startTimeConverted = moment(newFirstTrain, 'hh:mm').subtract(1, 'years');
-        console.log(startTimeConverted);
-
-        let timeDiff = moment().diff(moment(startTimeConverted), 'minutes');
-        console.log(timeDiff)
-
-        let tMinusTrain = timeDiff % newFrequency;
-        console.log(tMinusTrain);
-
-        let tMinutesTillTrain = newFrequency - tMinusTrain;
-        console.log(tMinutesTillTrain);
-
-        let tNextTrain = moment().add(tMinutesTillTrain, 'minutes');
-        console.log(tNextTrain);
-
-        let allAboard = moment(tNextTrain).format('HH:mm');
-        console.log(allAboard);
-
-        // Update train departure data
-        let upDateAllAboard = () => {
-            $('train-data').html(template);
-        }
-
-        let whistle = () => {
-            setInterval(upDateAllAboard, 60 * 1000);
-        };
-
-        // All Aboard!!
-        whistle();
-
-   
-        // ES6 Template String to display updated train data in DOM table id #train-data
-        let template = `
-        <tr>
-            <td>${newTrain}</td>
-            <td>${newLocation}</td>
-            <td>${newFirstTrain}</td>
-            <td>${newFrequency}</td>
-            <td>${tMinutesTillTrain} minutes</td>
-        </tr>
-    `
-        $("#train-data").append(template);
-
-
-        // console.log(newTrain, newLocation, newFirstTrain, newFrequency, tMinutesTillTrain);
-
-        // Screen out empty sets from display
-        $(newTrain, newLocation, newFirstTrain, newFrequency, tMinutesTillTrain).val('');
-        return false;
-
-
-    })
     let errorObject = () => {
         console.log(`Errors handled: ${errorObject.code}`);
     }
 
 });
+database.ref().on('child_added', function (childSnapshot) {
+    console.log(childSnapshot.val());
+
+    let newTrain = childSnapshot.val().name;
+    let newLocation = childSnapshot.val().destination;
+    let newFirstTrain = childSnapshot.val().firsttrain;
+    let newFrequency = childSnapshot.val().frequency;
+
+    // Use moment.js to calculate conversions, time differences and train schedules
+    let currentTime = moment();
+    console.log(currentTime);
+
+    let startTimeConverted = moment(newFirstTrain, 'hh:mm').subtract(1, 'years');
+    // console.log(startTimeConverted);
+
+    let timeDiff = moment().diff(moment(startTimeConverted), 'minutes');
+    // console.log(timeDiff)
+
+    let tMinusTrain = timeDiff % newFrequency;
+    // console.log(tMinusTrain);
+
+    let tMinutesTillTrain = newFrequency - tMinusTrain;
+    // console.log(tMinutesTillTrain);
+
+    let tNextTrain = moment().add(tMinutesTillTrain, 'minutes');
+    // console.log(tNextTrain);
+
+    let allAboard = moment(tNextTrain).format('HH:mm');
+    // console.log(allAboard);
+
+    // Update train departure data
+    let upDateAllAboard = () => {
+        $('train-data').html(template);
+    }
+
+    let whistle = () => {
+        setInterval(upDateAllAboard, 6 * 1000);
+    };
+
+    // All Aboard!!
+    whistle();
+
+
+    // ES6 Template String to display updated train data in DOM table id #train-data
+    let template = `
+    <tr>
+        <td>${newTrain}</td>
+        <td>${newLocation}</td>
+        <td>${newFirstTrain}</td>
+        <td>${newFrequency}</td>
+        <td>${tMinutesTillTrain} minutes</td>
+    </tr>
+`
+
+    $("#train-data").append(template);
+
+
+
+    // console.log(newTrain, newLocation, newFirstTrain, newFrequency, tMinutesTillTrain);
+
+    // Screen out empty sets from display
+    $(newTrain, newLocation, newFirstTrain, newFrequency, tMinutesTillTrain).val('');
+    return false;
+
+
+})
